@@ -1,14 +1,14 @@
 import { useRef, useState } from 'react'
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs'
-import { Card, CardContent } from '../components/ui/card'
-import { Button } from '../components/ui/button'
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
+import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 import { ArrowUp, XIcon, MusicIcon } from 'lucide-react'
 import Cerita from './Cerita'
 import AboutContent from './about/AboutComponent'
 import FotoCard from './FotoCard'
 import { AnimatePresence, motion } from 'framer-motion'
 import WelcomeMessageModal from './WelcomeMessageModal'
-import { cn } from '../lib/utils'
+import { cn } from '@/lib/utils'
 
 const songs = [
   { title: 'Enchanted - Taylor Swift', src: '/audio/enchanted.weba' },

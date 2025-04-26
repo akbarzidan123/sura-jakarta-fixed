@@ -3,12 +3,13 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Card, CardHeader, CardTitle, CardContent } from './ui/card'
-import { TypingText } from './shared/TypingText'
+// import { TypingText } from './shared/TypingText'
 import dynamic from 'next/dynamic'
 
-// const TypingText = dynamic(() => import('@/components/shared/TypingText'), {
-//   ssr: false,
-// })
+const TypingText = dynamic(
+  () => import('@/components/shared/TypingText').then((mod) => mod.TypingText),
+  { ssr: false }
+)
 
 const cards = [
   {

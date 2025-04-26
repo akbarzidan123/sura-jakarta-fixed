@@ -1,6 +1,6 @@
 // components/ui/input.tsx
 import { InputHTMLAttributes, forwardRef } from 'react'
-import { cn } from '../../lib/utils' // optional: classnames helper, bisa diganti manual juga
+import { cn } from '@/lib/utils' // optional: classnames helper, bisa diganti manual juga
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
