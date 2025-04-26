@@ -2,7 +2,9 @@
   "name": "sura-jakarta",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.10",
