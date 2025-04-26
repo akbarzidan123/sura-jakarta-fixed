@@ -32,14 +32,13 @@ export function TypingText({
 
   return (
     <div className='flex flex-col items-center justify-center text-center space-y-4'>
-      <span className='text-lg text-purple-600 leading-relaxed'>
+      <span className='text-lg text-purple-600 leading-relaxed text-justify'>
         {displayedText}
       </span>
 
       {isDone && farewell && (
         <button
           onClick={() => router.push('/')}
-          // onClick={() => window.location.reload()}
           className='mt-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-xl transition duration-300'
         >
           Back to Lobby
