@@ -59,7 +59,7 @@ const FotoCard = () => {
     },
     {
       src: '/img/AZ9.jpg',
-      caption: 'Cute Pose',
+      caption: 'Cute Pose 1',
       positionX: '50%',
       positionY: '50%',
     },
@@ -72,14 +72,14 @@ const FotoCard = () => {
     },
     {
       src: '/img/AZ11.jpg',
-      caption: 'bare faceee bleh kali ya',
+      caption: 'Cute Pose 2',
       style: 'object-cover w-full h-[250px] object-[center_30%]',
       positionX: '50%',
       positionY: '50%',
     },
     {
       src: '/img/AZ12.jpg',
-      caption: 'maw sholat nakal dlu',
+      caption: 'Momen belajar bahasa Inggris bareng Sheilla',
       style: 'object-cover w-full h-[250px] object-[center_30%]',
       positionX: '50%',
       positionY: '50%',
