@@ -8,6 +8,7 @@ import AboutContent from './about/AboutComponent'
 import FotoCard from './FotoCard'
 import { AnimatePresence, motion } from 'framer-motion'
 import WelcomeMessageModal from './WelcomeMessageModal'
+import ClosingOverlay from './shared/ClosingOverlay'
 import { cn } from '@/lib/utils'
 
 const songs = [
@@ -43,6 +44,8 @@ export default function SurakartaMemory() {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [showTop, setShowTop] = useState(false)
   const [showPlayer, setShowPlayer] = useState(true)
+  const [showConfirmModal, setShowConfirmModal] = useState(false)
+  const [showClosing, setShowClosing] = useState(false)
 
   const playSong = (song: (typeof songs)[0]) => {
     setCurrentSong(song)
@@ -59,7 +62,6 @@ export default function SurakartaMemory() {
   const scrollToTop = () => {
     document.getElementById('content')?.scrollTo({ top: 0, behavior: 'smooth' })
   }
-
   return (
     <>
       <WelcomeMessageModal></WelcomeMessageModal>
@@ -92,6 +94,55 @@ export default function SurakartaMemory() {
               </div>
             )}
           </div>
+
+          {/* Closing modal */}
+          <div className='fixed top-4 right-4 z-50'>
+            <button
+              onClick={() => setShowConfirmModal(true)}
+              className='bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-4 py-2 rounded-full shadow-lg hover:scale-105 transition-all duration-300 font-semibold'
+            >
+              ✨ Selesai
+            </button>
+          </div>
+          <AnimatePresence>
+            {showConfirmModal && (
+              <motion.div
+                className='fixed inset-0 bg-black/60 flex items-center justify-center z-50'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <motion.div
+                  className='bg-white p-8 rounded-2xl shadow-2xl text-center space-y-6 max-w-md mx-auto'
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: 1 }}
+                  exit={{ scale: 0.8 }}
+                >
+                  <h2 className='text-2xl font-bold text-gray-800'>
+                    Udah selesai buka semua kontennya?
+                  </h2>
+                  <div className='flex justify-center gap-6'>
+                    <button
+                      onClick={() => {
+                        setShowConfirmModal(false)
+                        setShowClosing(true)
+                      }}
+                      className='px-6 py-2 rounded-full bg-green-500 hover:bg-green-600 text-white font-semibold'
+                    >
+                      SUDAH SAYANG!!!``
+                    </button>
+                    <button
+                      onClick={() => setShowConfirmModal(false)}
+                      className='px-6 py-2 rounded-full bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold'
+                    >
+                      BELUM SABARRR!!!
+                    </button>
+                  </div>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
           <Tabs defaultValue='cerita' className='w-full max-w-4xl mx-auto'>
             <TabsList className='w-full flex justify-between gap-2 bg-[#c6c4fc] p-2 rounded-xl'>
               {tabs.map((tab) => (
@@ -209,6 +260,7 @@ export default function SurakartaMemory() {
           </Tabs>
         </div>
       </motion.div>
+      {showClosing && <ClosingOverlay />}
     </>
   )
 }

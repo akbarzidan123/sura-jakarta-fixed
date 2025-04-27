@@ -38,10 +38,10 @@ export function TypingText({
 
       {isDone && farewell && (
         <button
-          onClick={() => router.push('/')}
+          // onClick={() => router.push('/')}
           className='mt-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-xl transition duration-300'
         >
-          Back to Lobby
+          SAMPAI JUMPA KEMBALI SAYANG
         </button>
       )}
     </div>

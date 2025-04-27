@@ -42,16 +42,6 @@ export default function TypingCardTabs() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      {/* Tombol Finish */}
-      <div className='flex justify-center mb-6'>
-        <button
-          onClick={() => setShowConfirmModal(true)}
-          className='px-4 py-2 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition'
-        >
-          Finish
-        </button>
-      </div>
-
       {/* Tabs */}
       <div className='flex flex-wrap justify-center gap-2 mb-6'>
         {cards.map((item, idx) => (
