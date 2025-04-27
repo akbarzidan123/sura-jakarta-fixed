@@ -119,7 +119,7 @@ export default function SurakartaMemory() {
                   exit={{ scale: 0.8 }}
                 >
                   <h2 className='text-2xl font-bold text-gray-800'>
-                    Udah selesai buka semua kontennya?
+                    Udah selesai buka semua kontennya Sayang?
                   </h2>
                   <div className='flex justify-center gap-6'>
                     <button
@@ -129,13 +129,13 @@ export default function SurakartaMemory() {
                       }}
                       className='px-6 py-2 rounded-full bg-green-500 hover:bg-green-600 text-white font-semibold'
                     >
-                      SUDAH SAYANG!!!``
+                      SUDAH SAYANG!!!
                     </button>
                     <button
                       onClick={() => setShowConfirmModal(false)}
                       className='px-6 py-2 rounded-full bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold'
                     >
-                      BELUM SABARRR!!!
+                      BELUM SAYANG!!!
                     </button>
                   </div>
                 </motion.div>
